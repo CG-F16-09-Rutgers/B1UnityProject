@@ -7,6 +7,7 @@ TagManager:
   - agent
   - wall
   - floor
+  - ball
   layers:
   - Default
   - TransparentFX

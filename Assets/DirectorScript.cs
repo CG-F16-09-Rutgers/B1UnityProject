@@ -9,12 +9,18 @@ public class DirectorScript : MonoBehaviour {
 	public Vector3 target;
 	int i;
 	private bool found;
-
+	private BallController currBall;
+	private bool ballSelected;
+	public Material ball1;
+	public Material ball2;
+	public Material agent1;
+	public Material agent2;
 
 	// Use this for initialization
 	void Start () {
 		agents = new List<AgentScript>();
 		found = false;
+		ballSelected = false;
 	}
 	
 	// Update is called once per frame
@@ -26,6 +32,7 @@ public class DirectorScript : MonoBehaviour {
 				if (hit.collider.CompareTag ("agent")) {
 					foreach (AgentScript ag in agents) {
 						if (ag.aindex == hit.collider.GetComponent<AgentScript> ().aindex) {
+							agents[i].GetComponent<Renderer>().material = agent1;
 							agents.RemoveAt (i);
 							found = true;
 							break;
@@ -34,10 +41,26 @@ public class DirectorScript : MonoBehaviour {
 					}
 
 					if (found == false) {
+						hit.collider.GetComponent<AgentScript> ().GetComponent<Renderer> ().material = agent2;
 						agents.Add (hit.collider.GetComponent<AgentScript>());
 					}
 					found = false;
 					i = 0;
+				}
+				else if (hit.collider.CompareTag("ball")){
+					if(ballSelected){
+						currBall.canMove = false;
+						currBall.GetComponent<Renderer>().material = ball1;
+						if(currBall == hit.collider.GetComponent<BallController>()){
+							ballSelected = false;
+							return;
+						}
+					}
+					currBall = hit.collider.GetComponent<BallController>();
+					currBall.canMove = true;
+					ballSelected = true;
+					currBall.GetComponent<Renderer>().material = ball2;
+
 				}
 			}
 		}
@@ -51,7 +74,9 @@ public class DirectorScript : MonoBehaviour {
 				//}
 			}
 		}
-		if (Input.GetKeyDown (KeyCode.D)) {
+		if (Input.GetKeyDown (KeyCode.Q)) {
+			foreach (AgentScript ag in agents)
+				ag.GetComponent<Renderer>().material = agent1;
 			agents.Clear ();
 		}
 	}

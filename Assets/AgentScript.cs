@@ -5,6 +5,7 @@ public class AgentScript : MonoBehaviour {
 	public int aindex;
 	public Vector3 target;
 	NavMeshAgent agent;
+	public int minDistance;
 
 	// Use this for initialization
 	void Start () {
@@ -14,6 +15,8 @@ public class AgentScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		agent.SetDestination (target);
+		//while(Vector3.Distance(transform.position, target) > minDistance)
+			agent.SetDestination (target);
+		//Basically, once the agent is > min distance away, do agent.stop() or something
 	}
 }
