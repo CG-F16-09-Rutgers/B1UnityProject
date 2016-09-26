@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Rotator : MonoBehaviour {
 
-	public int moveTime;
+	public float moveTime;
 	public float myx, myy, myz;
 	private int dir;
 	private bool switched;
@@ -15,7 +15,7 @@ public class Rotator : MonoBehaviour {
 
 	void Update () {
 		transform.Rotate (new Vector3 (15, 30, 45) * Time.deltaTime);
-		if (((int)Time.time) % moveTime != 0) {
+		if (((int)Time.fixedTime) % moveTime != 0) {
 			Vector3 go = (new Vector3(myx, myy, myz))*dir*0.01f;
 			transform.Translate (go, Space.World);
 			Debug.Log (go);

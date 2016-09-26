@@ -7,6 +7,7 @@ public class AgentScript : MonoBehaviour {
 	NavMeshAgent agent;
 	public int minDistance;
 	public int avPri;
+	public bool naz;
 
 	// Use this for initialization
 	void Start () {
@@ -21,5 +22,14 @@ public class AgentScript : MonoBehaviour {
 		//while(Vector3.Distance(transform.position, target) > minDistance)
 			agent.SetDestination (target);
 		//Basically, once the agent is > min distance away, do agent.stop() or something
+	}
+	void OnTriggerStay(Collider other) {
+		Debug.Log ("Is running");
+		if (other.CompareTag ("agent")) {
+			if(transform.position.x > -4)
+				other.GetComponent<AgentScript>().target = new Vector3(-11.0f, 0.37f, 2.25f);
+			else
+				other.GetComponent<AgentScript>().target = new Vector3(4, 0.37f, 2.25f);
+		}
 	}
 }

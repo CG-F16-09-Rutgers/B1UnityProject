@@ -13,6 +13,8 @@ public class SpawnerScript : MonoBehaviour {
 			AnAgent.aindex = i;
 			NumberOfAgents = NumberOfAgents - 1;
 			AnAgent.avPri = 50;
+			AnAgent.GetComponent<NavMeshAgent> ().stoppingDistance = 1.5f;
+			AnAgent.naz = false;
 		}
 	}
 	
