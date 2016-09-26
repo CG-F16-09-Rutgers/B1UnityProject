@@ -6,11 +6,14 @@ public class AgentScript : MonoBehaviour {
 	public Vector3 target;
 	NavMeshAgent agent;
 	public int minDistance;
+	public int avPri;
 
 	// Use this for initialization
 	void Start () {
 		agent = GetComponent<NavMeshAgent> ();
-		target.Set ((float)-3.6, (float)2.0, (float)4.5);
+		//target.Set ((float)-3.6, (float)2.0, (float)4.5);
+		target.Set (transform.position.x, transform.position.y, transform.position.z);
+		agent.avoidancePriority = avPri;
 	}
 	
 	// Update is called once per frame

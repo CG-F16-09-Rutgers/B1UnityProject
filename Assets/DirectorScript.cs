@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 
 public class DirectorScript : MonoBehaviour {
 	public Camera thecamera;
@@ -15,6 +16,7 @@ public class DirectorScript : MonoBehaviour {
 	public Material ball2;
 	public Material agent1;
 	public Material agent2;
+	public Text helptext;
 
 	// Use this for initialization
 	void Start () {
@@ -78,6 +80,12 @@ public class DirectorScript : MonoBehaviour {
 			foreach (AgentScript ag in agents)
 				ag.GetComponent<Renderer>().material = agent1;
 			agents.Clear ();
+		}
+		if (Input.GetKeyDown (KeyCode.H)) {
+			if (helptext.enabled)
+				helptext.enabled = false;
+			else
+				helptext.enabled = true;
 		}
 	}
 }

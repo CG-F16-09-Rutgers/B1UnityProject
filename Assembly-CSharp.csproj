@@ -49,6 +49,7 @@
      <Compile Include="Assets\BallController.cs" />
      <Compile Include="Assets\CameraController.cs" />
      <Compile Include="Assets\DirectorScript.cs" />
+     <Compile Include="Assets\Rotator.cs" />
      <Compile Include="Assets\SampleScenes\Menu\Scripts\MenuSceneLoader.cs" />
      <Compile Include="Assets\SampleScenes\Menu\Scripts\PauseMenu.cs" />
      <Compile Include="Assets\SampleScenes\Menu\Scripts\SceneAndURLLoader.cs" />

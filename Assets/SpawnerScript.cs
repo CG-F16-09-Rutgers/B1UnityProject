@@ -8,10 +8,11 @@ public class SpawnerScript : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		while (NumberOfAgents > 0) {
-			AgentScript AnAgent = (AgentScript)Instantiate (prefab, new Vector3(2*Random.value - 1, 3, 2*Random.value-1), Quaternion.identity);
+			AgentScript AnAgent = (AgentScript)Instantiate (prefab, new Vector3(2*Random.value - 1, 1, 2*Random.value-1), Quaternion.identity);
 			i = i + 1;
 			AnAgent.aindex = i;
 			NumberOfAgents = NumberOfAgents - 1;
+			AnAgent.avPri = 50;
 		}
 	}
 	
