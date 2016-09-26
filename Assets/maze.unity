@@ -931,10 +931,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cceaa8a496914045bcddd8a9126cb72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveTime: 0.8
+  moveTime: 2
   myx: 0
   myy: 0
-  myz: -1
+  myz: -2
 --- !u!208 &466072918
 NavMeshObstacle:
   m_ObjectHideFlags: 0

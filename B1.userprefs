@@ -2,12 +2,12 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Rotator.cs">
     <Files>
-      <File FileName="Assets\AgentScript.cs" Line="27" Column="28" />
+      <File FileName="Assets\AgentScript.cs" Line="1" Column="1" />
       <File FileName="Assets\BallController.cs" Line="1" Column="1" />
-      <File FileName="Assets\DirectorScript.cs" Line="4" Column="22" />
-      <File FileName="Assets\SpawnerScript.cs" Line="17" Column="24" />
+      <File FileName="Assets\DirectorScript.cs" Line="1" Column="1" />
+      <File FileName="Assets\SpawnerScript.cs" Line="1" Column="1" />
       <File FileName="Assets\CameraController.cs" Line="1" Column="1" />
-      <File FileName="Assets\Rotator.cs" Line="26" Column="4" />
+      <File FileName="Assets\Rotator.cs" Line="6" Column="12" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

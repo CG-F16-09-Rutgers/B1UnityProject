@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Rotator : MonoBehaviour {
 
-	public float moveTime;
+	public int moveTime;
 	public float myx, myy, myz;
 	private int dir;
 	private bool switched;
